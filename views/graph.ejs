@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style type="text/css">
+        #container {
+            height: 90%;
+            width: 95%;
+            position: absolute;
+        }
+        #graph {
+            min-width: 90%;
+            width: 90%;
+            min-height: 90%;
+            height: 90%;
+        }
+    </style>
+</head>
+<body role="document">
+
+<% include templates/navbar.ejs %>
+
+<div id="container">
+    <div id="graph"></div>
+</div>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/highcharts-3d.js"></script>
+<script>
+    var data = <%- JSON.stringify(currentData) %>; // this is so that graph.js file can access the data information
+</script>
+<script src="javascripts/graph.js"></script>
+</body>
+</html>
